@@ -31,6 +31,9 @@ semantic_models:
         type_params:
           time_granularity: day
         expr: created_at
+      - name: status_dim
+        type: categorical
+        expr: status
 
 metrics:
   - name: revenue
@@ -39,12 +42,4 @@ metrics:
     type_params:
       measure: total_amount
     filter:
-      - where: "<img src=x onerror=alert(document.domain)>"
-
-  - name: revenue_xss2
-    label: Revenue XSS Test
-    type: simple
-    type_params:
-      measure: total_amount
-    filter:
-      - where: '<svg onload=alert(document.domain)>'
+      - where: "{{ Dimension('order_id__status_dim') }} = '<img src=x onerror=alert(document.domain)>'"
