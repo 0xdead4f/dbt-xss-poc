@@ -36,10 +36,10 @@ semantic_models:
         expr: status
 
 metrics:
-  - name: revenue_xss
-    label: Revenue XSS Test
+  - name: revenue_filtered
+    label: Revenue Filtered
     type: simple
     type_params:
       measure: total_amount
     filter:
-      - where: "status_dim = '<img src=x onerror=alert(document.domain)>'"
+      - where: "1 = 1"
