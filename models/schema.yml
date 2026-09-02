@@ -36,18 +36,8 @@ semantic_models:
         expr: status
 
 metrics:
-  - name: revenue
-    label: Total Revenue
-    type: simple
-    type_params:
-      measure: total_amount
-    filter:
-      - where: "status = '<img src=x onerror=alert(document.domain)>'"
-
   - name: revenue_clean
-    label: Revenue Clean
+    label: Revenue Clean Test
     type: simple
     type_params:
       measure: total_amount
-    filter:
-      - where: "status = 'active'"
