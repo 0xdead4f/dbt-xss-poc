@@ -42,4 +42,5 @@ metrics:
     type_params:
       measure: total_amount
     filter:
-      - where: "{{ Dimension('status_dim') }} = '<img src=x onerror=alert(document.domain)>'"
+      where_filters:
+        - where_sql_template: "<img src=x onerror=alert(document.domain)>"
