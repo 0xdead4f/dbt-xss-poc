@@ -36,11 +36,8 @@ semantic_models:
         expr: status
 
 metrics:
-  - name: revenue_xss
-    label: Revenue XSS Test
+  - name: revenue_clean
+    label: Revenue Clean
     type: simple
     type_params:
       measure: total_amount
-    filter:
-      where_filters:
-        - where_sql_template: "<img src=x onerror=alert(document.domain)>"
