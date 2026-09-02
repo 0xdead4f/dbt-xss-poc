@@ -1,0 +1,45 @@
+[0m03:33:43.225552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc39730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d111820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d111640>]}
+
+
+============================== 03:33:43.228355 | 906d8243-35d9-4171-aa8f-02af3e8b36a7 ==============================
+[0m03:33:43.228355 [info ] [MainThread]: Running with dbt=1.10.23
+[0m03:33:43.228639 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt parse --profiles-dir .', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'version_check': 'True', 'cache_selected_only': 'False', 'static_parser': 'True', 'empty': 'None', 'profiles_dir': '.', 'log_cache_events': 'False', 'quiet': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'printer_width': '80', 'log_path': '/private/tmp/dbt-xss-poc/logs', 'fail_fast': 'False'}
+[0m03:33:43.228836 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m03:33:43.229009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '906d8243-35d9-4171-aa8f-02af3e8b36a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc39730>]}
+[0m03:33:45.220618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '906d8243-35d9-4171-aa8f-02af3e8b36a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d526280>]}
+[0m03:33:45.249349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '906d8243-35d9-4171-aa8f-02af3e8b36a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d111130>]}
+[0m03:33:45.250323 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m03:33:45.318427 [debug] [MainThread]: checksum: 2b1352ea083ab2415ad0dbf54db2d1ac6054af1cb939f9d756e37438b9e9a7cf, vars: {}, profile: , target: , version: 1.10.23
+[0m03:33:45.318966 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m03:33:45.319184 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '906d8243-35d9-4171-aa8f-02af3e8b36a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d8b6370>]}
+[0m03:33:45.910301 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Invalid metrics config given in FilePath(searched_path='models', relative_path='schema.yml', modification_time=1788381174.957454, project_root='/private/tmp/dbt-xss-poc') @ metrics: {'name': 'revenue_xss', 'label': 'Revenue XSS Test', 'type': 'simple', 'type_params': {'measure': 'total_amount'}, 'filter': [{'where': "status = 'active'"}]} - at path ['filter']: [{'where': "status = 'active'"}] is not valid under any of the given schemas
+[0m03:33:45.912716 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": false, "command_wall_clock_time": 2.7311203, "process_in_blocks": "0", "process_kernel_time": 0.196634, "process_mem_max_rss": "107970560", "process_out_blocks": "0", "process_user_time": 1.356984}
+[0m03:33:45.913002 [debug] [MainThread]: Command `dbt parse` failed at 03:33:45.912950 after 2.73 seconds
+[0m03:33:45.913221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc39730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1c8f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e13c460>]}
+[0m03:33:45.913449 [debug] [MainThread]: Flushing usage events
+[0m03:33:47.126889 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:34:18.228572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a5b4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af22850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af22670>]}
+
+
+============================== 03:34:18.230927 | 2a8ba61f-6eda-498a-8a56-655502feaf60 ==============================
+[0m03:34:18.230927 [info ] [MainThread]: Running with dbt=1.10.23
+[0m03:34:18.231187 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'quiet': 'False', 'use_colors': 'True', 'log_format': 'default', 'version_check': 'True', 'warn_error': 'None', 'invocation_command': 'dbt parse --profiles-dir .', 'send_anonymous_usage_stats': 'True', 'log_path': '/private/tmp/dbt-xss-poc/logs', 'fail_fast': 'False', 'profiles_dir': '.', 'write_json': 'True', 'partial_parse': 'True', 'printer_width': '80', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'introspect': 'True', 'static_parser': 'True', 'use_experimental_parser': 'False', 'empty': 'None'}
+[0m03:34:18.231370 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m03:34:18.231511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '2a8ba61f-6eda-498a-8a56-655502feaf60', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a5b4c0>]}
+[0m03:34:18.335008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2a8ba61f-6eda-498a-8a56-655502feaf60', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082bd610>]}
+[0m03:34:18.362048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2a8ba61f-6eda-498a-8a56-655502feaf60', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a062040>]}
+[0m03:34:18.362689 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m03:34:18.419762 [debug] [MainThread]: checksum: 2b1352ea083ab2415ad0dbf54db2d1ac6054af1cb939f9d756e37438b9e9a7cf, vars: {}, profile: , target: , version: 1.10.23
+[0m03:34:18.420231 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m03:34:18.420425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2a8ba61f-6eda-498a-8a56-655502feaf60', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b693c40>]}
+[0m03:34:19.037260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2a8ba61f-6eda-498a-8a56-655502feaf60', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c224130>]}
+[0m03:34:19.039529 [info ] [MainThread]: Performance info: /private/tmp/dbt-xss-poc/target/perf_info.json
+[0m03:34:19.106135 [debug] [MainThread]: Wrote artifact WritableManifest to /private/tmp/dbt-xss-poc/target/manifest.json
+[0m03:34:19.108418 [debug] [MainThread]: Wrote artifact SemanticManifest to /private/tmp/dbt-xss-poc/target/semantic_manifest.json
+[0m03:34:19.110387 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 0.9269015, "process_in_blocks": "0", "process_kernel_time": 0.16676, "process_mem_max_rss": "120520704", "process_out_blocks": "0", "process_user_time": 1.405322}
+[0m03:34:19.110620 [debug] [MainThread]: Command `dbt parse` succeeded at 03:34:19.110579 after 0.93 seconds
+[0m03:34:19.110806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a5b4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aed8b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1098d3640>]}
+[0m03:34:19.110994 [debug] [MainThread]: Flushing usage events
+[0m03:34:20.200273 [debug] [MainThread]: An error was encountered while trying to flush usage events

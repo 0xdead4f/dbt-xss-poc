@@ -37,9 +37,9 @@ semantic_models:
 
 metrics:
   - name: revenue_xss
-    label: Revenue XSS Test
+    label: Revenue XSS PoC
     type: simple
     type_params:
       measure: total_amount
     filter:
-      - "status = '<img src=x onerror=alert(document.domain)>'"
+      - "<img src=x onerror=alert(document.domain)>"
