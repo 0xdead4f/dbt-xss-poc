@@ -36,8 +36,10 @@ semantic_models:
         expr: status
 
 metrics:
-  - name: revenue_clean
-    label: Revenue Clean
+  - name: revenue_xss
+    label: Revenue XSS Test
     type: simple
     type_params:
       measure: total_amount
+    filter:
+      - where: "status = 'active'"
