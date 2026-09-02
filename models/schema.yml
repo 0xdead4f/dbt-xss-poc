@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: orders
+    columns:
+      - name: id
+        data_type: integer
+      - name: amount
+        data_type: numeric
+      - name: created_at
+        data_type: timestamp
+      - name: status
+        data_type: varchar
+
+semantic_models:
+  - name: orders_model
+    defaults:
+      agg_time_dimension: order_date
+    model: ref('orders')
+    entities:
+      - name: order_id
+        type: primary
+        expr: id
+    measures:
+      - name: total_amount
+        agg: sum
+        expr: amount
+    dimensions:
+      - name: order_date
+        type: time
+        type_params:
+          time_granularity: day
+        expr: created_at
+
+metrics:
+  - name: revenue
+    label: Total Revenue
+    type: simple
+    type_params:
+      measure: total_amount
+    filter:
+      - where: "<img src=x onerror=alert(document.domain)>"
+
+  - name: revenue_xss2
+    label: Revenue XSS Test
+    type: simple
+    type_params:
+      measure: total_amount
+    filter:
+      - where: '<svg onload=alert(document.domain)>'
